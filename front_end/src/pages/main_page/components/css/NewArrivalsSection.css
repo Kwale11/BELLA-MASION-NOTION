@@ -1,0 +1,49 @@
+.new-arrivals {
+    width: 100%;
+    padding: 120px 32px;
+
+    color: #1b1916;
+    background-color: #ffffff;
+}
+
+.new-arrivals__header {
+    margin-bottom: 56px;
+    text-align: center;
+}
+
+.new-arrivals__header p {
+    margin: 0 0 12px;
+
+    color: #8e8376;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.new-arrivals__header h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 400;
+}
+
+.new-arrivals__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px 50px;
+
+    max-width: 762px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .new-arrivals {
+        padding: 90px 20px;
+    }
+
+    .new-arrivals__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}

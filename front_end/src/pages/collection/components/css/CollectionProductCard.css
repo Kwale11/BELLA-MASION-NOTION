@@ -1,0 +1,122 @@
+.collection-product-card {
+    min-width: 0;
+}
+
+.collection-product-card__media {
+    position: relative;
+
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    background-color: #f2f0ec;
+}
+
+.collection-product-card__media > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.collection-product-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 500ms ease;
+}
+
+.collection-product-card:hover
+.collection-product-card__media img {
+    transform: scale(1.035);
+}
+
+.collection-product-card__badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+
+    color: #37312b;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.collection-product-card__favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    color: #4e4943;
+    background-color: rgb(255 255 255 / 70%);
+    backdrop-filter: blur(6px);
+
+    cursor: pointer;
+}
+
+.collection-product-card__favorite--active {
+    color: #9d625d;
+}
+
+.collection-product-card__information {
+    padding: 18px 3px 0;
+}
+
+.collection-product-card__information a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.collection-product-card__information p {
+    margin: 0 0 7px;
+
+    color: #8b8379;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+.collection-product-card__information h2 {
+    margin: 0;
+
+    color: #28241f;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.collection-product-card__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-top: 13px;
+}
+
+.collection-product-card__price > span {
+    color: #514a43;
+    font-size: 11px;
+}
+
+.collection-product-card__price small {
+    color: #9a8a78;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .collection-product-card__media img {
+        transition: none;
+    }
+}

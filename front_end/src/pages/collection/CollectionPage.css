@@ -1,0 +1,51 @@
+.collection-page {
+    width: 100%;
+    min-height: 100vh;
+
+    color: #1c1a17;
+    background-color: #ffffff;
+}
+
+.collection-page__products {
+    width: 100%;
+    padding: 80px 36px 130px;
+}
+
+.collection-page__layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: clamp(45px, 6vw, 90px);
+
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.collection-page__results {
+    min-width: 0;
+}
+
+.collection-page__filter-backdrop {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .collection-page__products {
+        padding: 60px 20px 100px;
+    }
+
+    .collection-page__layout {
+        display: block;
+    }
+
+    .collection-page__filter-backdrop {
+        position: fixed;
+        z-index: 90;
+        inset: 0;
+
+        display: block;
+        border: 0;
+
+        background-color: rgb(18 16 14 / 45%);
+        cursor: pointer;
+    }
+}

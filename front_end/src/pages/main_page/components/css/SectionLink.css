@@ -1,0 +1,37 @@
+.section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.section-link--light {
+    color: #f7f3eb;
+    border-bottom-color: rgb(247 243 235 / 50%);
+}
+
+.section-link--dark {
+    color: #1b1916;
+    border-bottom-color: rgb(27 25 22 / 45%);
+}
+
+.section-link svg {
+    transition: transform 180ms ease;
+}
+
+.section-link:hover svg {
+    transform: translateX(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-link svg {
+        transition: none;
+    }
+}

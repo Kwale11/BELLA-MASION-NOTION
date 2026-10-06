@@ -1,0 +1,140 @@
+.hero-section {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 92vh;
+    overflow: hidden;
+
+    color: #f7f3eb;
+    background-color: #77766f;
+}
+
+.hero-section__background {
+    position: absolute;
+    z-index: -3;
+    inset: 0;
+
+    background-image: url("../../../../assets/배경이미지.jpg");
+    background-repeat: no-repeat;
+    background-position: center 42%;
+    background-size: cover;
+
+    transform: scale(1.02);
+}
+
+.hero-section__overlay {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    rgb(12 11 9 / 38%) 0%,
+                    rgb(12 11 9 / 7%) 30%,
+                    rgb(12 11 9 / 10%) 67%,
+                    rgb(12 11 9 / 53%) 100%
+            ),
+            linear-gradient(
+                    90deg,
+                    rgb(12 11 9 / 17%) 0%,
+                    transparent 48%,
+                    rgb(12 11 9 / 6%) 100%
+            );
+}
+
+.hero-section__content {
+    position: absolute;
+    bottom: clamp(52px, 9vh, 96px);
+    left: clamp(28px, 7vw, 104px);
+    z-index: 2;
+
+    max-width: 540px;
+}
+
+.hero-section__eyebrow {
+    margin: 0 0 18px;
+
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.hero-section__content h1 {
+    margin: 0 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(54px, 7vw, 96px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.035em;
+}
+
+.hero-section__description {
+    margin: 0 0 28px;
+
+    font-size: 13px;
+    line-height: 1.85;
+    letter-spacing: 0.035em;
+}
+
+.hero-section__scroll {
+    position: absolute;
+    right: 35px;
+    bottom: 38px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-section__scroll span {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    writing-mode: vertical-rl;
+}
+
+.hero-section__scroll div {
+    width: 1px;
+    height: 42px;
+    background: rgb(247 243 235 / 65%);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 92svh;
+    }
+
+    .hero-section__background {
+        background-position: 55% center;
+    }
+
+    .hero-section__content {
+        right: 22px;
+        bottom: 44px;
+        left: 22px;
+    }
+
+    .hero-section__content h1 {
+        font-size: clamp(50px, 15vw, 68px);
+        line-height: 0.9;
+    }
+
+    .hero-section__description {
+        font-size: 12px;
+    }
+
+    .hero-section__scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-section__content h1 {
+        font-size: 48px;
+    }
+}

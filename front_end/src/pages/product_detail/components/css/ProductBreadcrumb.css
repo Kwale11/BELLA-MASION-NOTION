@@ -1,0 +1,38 @@
+.product-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 26px 36px;
+
+    color: #8c857d;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+}
+
+.product-breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-breadcrumb a:hover {
+    color: #24211d;
+}
+
+.product-breadcrumb > span {
+    max-width: 220px;
+    overflow: hidden;
+
+    color: #24211d;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .product-breadcrumb {
+        padding: 20px;
+    }
+}

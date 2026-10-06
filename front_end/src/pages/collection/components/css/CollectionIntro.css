@@ -1,0 +1,91 @@
+.collection-intro {
+    width: 100%;
+    padding: 70px 36px 100px;
+
+    color: #1c1a17;
+    background-color: #f7f4ee;
+    background-image: url("../../../../assets/콜렉션인트로4.png");
+    background-repeat: no-repeat;
+    background-position: center 42%;
+    background-size: cover;
+
+    transform: scale(1.02);
+}
+
+.collection-intro__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    max-width: 1440px;
+    margin: 0 auto;
+
+    /*color: #928a80;*/
+    color: #f7f3eb;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.collection-intro__breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.collection-intro__content {
+    max-width: 780px;
+    margin: 90px auto 0;
+    text-align: center;
+}
+
+.collection-intro__content > p {
+    margin: 0 0 18px;
+
+    /*color: #8b7f72;*/
+    color: #f7f3eb;
+
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.collection-intro h1 {
+    margin: 0 0 27px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(64px, 9vw, 112px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.035em;
+    color: #f7f3eb;
+    /*color: #625c55;*/
+
+}
+
+.collection-intro__content > span {
+    /*color: #625c55;*/
+    color: #f7f3eb;
+
+    font-size: 13px;
+    line-height: 2;
+    word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+    .collection-intro {
+        padding: 45px 20px 75px;
+    }
+
+    .collection-intro__content {
+        margin-top: 70px;
+    }
+
+    .collection-intro h1 {
+        font-size: clamp(58px, 19vw, 82px);
+    }
+
+    .collection-intro__content > span {
+        font-size: 12px;
+    }
+}

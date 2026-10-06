@@ -1,0 +1,33 @@
+@Service는 Spring에게 이 클래스는 비즈니스 로직을 담당하는 서비스 객체임을 알려줌 .
+
+@Transactional은 이 메서드의 DB작업을 하나의 작업단위로 묶어줌.
+
+Customization customization = new Customization(
+    UUID.randomUUID(),
+    selections,
+    quote.totalPrice(),
+    quote.currency(),
+    Instant.now().truncatedTo(ChronoUnit.MICROS)
+);
+현재 선택정보의 가격을 계산함
+UUID.randomUUID() : 새 커스터마이징의 고유 ID생성
+selections : 사용자가 고른 반지 옵션
+quote.totalPrice() : 계산된 최종가격
+quote.currency() : 통화정보
+Instant.now() : 생성 시각
+truncatedTo(MICROS) : 시간을 마이크로초 단위까지만 저장
+
+CustomizationService
+  ├─ 옵션 제공
+  ├─ 가격 계산
+  ├─ 커스터마이징 생성 후 저장
+  └─ ID로 저장된 커스터마이징 조회
+       ↓
+CustomizationRepository
+       ↓
+Database
+
+
+생성자 주입은 의존성주입이란 방법중 하나임.
+의존성 주입: 객체가 필요한 다른 객체를 직접 만들지 않고, 외부(Spring)가 넣어주는 방식
+생성자 주입: 외부에서 넣어줄 때 생성자를 통해 전달하는 방식

@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+**/node_modules/
+**/.gradle/
+**/build/
+**/dist/
+**/out/
+**/.idea/
+*.log
+*.tsbuildinfo
+/back_end/src/main/resources/application.yml

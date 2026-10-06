@@ -1,0 +1,132 @@
+.intro-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 78vh;
+    padding: 120px 24px;
+
+    overflow: hidden;
+
+    color: #1b1916;
+    background-color: #faf9f6;
+
+    transform: scale(1.02);
+    isolation: isolate;
+}
+
+/*
+ * 배경 이미지를 별도 레이어로 만듭니다.
+ * 처음에는 보이지 않지만 미리 로드됩니다.
+ */
+.intro-section::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+
+    content: "";
+
+    background-image:
+            url("../../../../assets/인트로배경2.png");
+    background-repeat: no-repeat;
+    background-position: center 42%;
+    background-size: cover;
+
+    opacity: 0;
+    transform: scale(1.04);
+
+    transition:
+            opacity 900ms ease,
+            transform 1400ms ease;
+
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+/*
+ * HeroSection이 화면에서 사라졌을 때
+ * React가 이 클래스를 추가합니다.
+ */
+.intro-section--background-visible::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.intro-section__content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 680px;
+
+    text-align: center;
+}
+
+.intro-section__eyebrow {
+    margin: 0 0 24px;
+
+    color: #8e8376;
+
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+}
+
+.intro-section h2 {
+    margin: 0 0 28px;
+
+    font-family:
+            "Cormorant Garamond",
+            serif;
+
+    font-size:
+            clamp(
+                    42px,
+                    6vw,
+                    72px
+            );
+
+    font-weight: 400;
+    line-height: 1;
+}
+
+.intro-section__description {
+    margin: 0 0 32px;
+
+    color: #655f58;
+
+    font-size: 13px;
+    line-height: 2;
+}
+
+/*
+ * 모션 감소 설정을 사용하는 사용자에게는
+ * 확대 애니메이션을 적용하지 않습니다.
+ */
+@media (prefers-reduced-motion: reduce) {
+    .intro-section::before {
+        transform: none;
+        transition: opacity 200ms ease;
+    }
+
+    .intro-section--background-visible::before {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        min-height: 72vh;
+        padding: 90px 22px;
+    }
+
+    .intro-section h2 {
+        font-size: 43px;
+    }
+
+    .intro-section__description {
+        font-size: 12px;
+    }
+}

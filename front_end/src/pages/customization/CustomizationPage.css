@@ -1,0 +1,828 @@
+.customization-page {
+    --customization-ink: #1d1b19;
+    --customization-muted: #77716b;
+    --customization-line: #ddd8d2;
+    --customization-background: #f7f5f2;
+    --customization-accent: #8e745a;
+
+    min-height: 100vh;
+    padding-top: 110px;
+
+    color: var(--customization-ink);
+    background: #fff;
+}
+
+.customization-page__hero {
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    padding: 96px 48px 110px;
+
+    border-bottom:
+            1px solid
+            var(--customization-line);
+}
+/*.customization-page__hero {*/
+/*    max-width: 1440px;*/
+/*    margin: 0 auto;*/
+/*    padding: 96px 48px 110px;*/
+
+/*    background: linear-gradient(*/
+/*            105deg,*/
+/*            #ffffff 0%,*/
+/*            #f8f8f7 42%,*/
+/*            #e4e4e3 72%,*/
+/*            #bcbdbb 100%*/
+/*    );*/
+
+/*    border-bottom: 1px solid var(--customization-line);*/
+/*}*/
+
+.customization-page__hero p {
+    margin: 0 0 24px;
+
+    font-size: 11px;
+    letter-spacing: 0.22em;
+}
+
+.customization-page__hero h1 {
+    margin: 0;
+
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size:
+            clamp(
+                    42px,
+                    5vw,
+                    76px
+            );
+
+    font-weight: 400;
+    line-height: 1.14;
+}
+
+.customization-page__hero > span {
+    display: block;
+
+    max-width: 520px;
+
+    margin-top: 30px;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.customization-page__layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 70px;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    padding: 80px 48px 140px;
+}
+
+.customization-page__left {
+    min-width: 0;
+}
+
+.customization-page__right {
+    min-width: 0;
+}
+
+.ring-preview-sticky {
+    position: sticky;
+
+    top: 134px;
+
+    width: 100%;
+
+    z-index: 10;
+
+    background: #fff;
+}
+
+.customization-section {
+    padding: 0 0 90px;
+
+    margin-bottom: 90px;
+
+    border-bottom:
+            1px solid
+            var(--customization-line);
+}
+
+.customization-section__header {
+    display: flex;
+
+    gap: 24px;
+
+    margin-bottom: 34px;
+}
+
+.customization-section__header > span {
+    padding-top: 6px;
+
+    color:
+            var(--customization-accent);
+
+    font-size: 12px;
+    letter-spacing: 0.12em;
+}
+
+.customization-section__header h2 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.customization-section__header p {
+    margin: 10px 0 0;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 14px;
+}
+
+.customization-section__notice {
+    display: grid;
+
+    min-height: 150px;
+
+    color:
+            var(--customization-muted);
+
+    background:
+            var(--customization-background);
+
+    place-items: center;
+}
+
+.customization-option-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+.customization-option {
+    padding: 0;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    text-align: left;
+
+    background: #fff;
+
+    border:
+            1px solid
+            var(--customization-line);
+
+    cursor: pointer;
+
+    transition:
+            border-color 180ms ease,
+            transform 180ms ease,
+            box-shadow 180ms ease;
+}
+
+.customization-option:hover {
+    transform:
+            translateY(-3px);
+
+    border-color: #9a9188;
+
+    box-shadow:
+            0
+            12px
+            28px
+            rgb(39 32 25 / 8%);
+}
+
+.customization-option--selected {
+    border-color:
+            var(--customization-ink);
+
+    box-shadow:
+            inset
+            0
+            0
+            0
+            1px
+            var(--customization-ink);
+}
+
+.customization-option__image {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 4 / 3;
+
+    background:
+            var(--customization-background);
+}
+
+.customization-option__image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+            transform 500ms ease;
+}
+
+.customization-option:hover img {
+    transform:
+            scale(1.035);
+}
+
+.customization-option__check {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    display: grid;
+
+    width: 28px;
+    height: 28px;
+
+    color: #fff;
+
+    background:
+            var(--customization-ink);
+
+    border-radius: 50%;
+
+    place-items: center;
+
+    opacity: 0;
+
+    transform:
+            scale(0.7);
+
+    transition:
+            180ms ease;
+}
+
+.customization-option--selected
+.customization-option__check {
+    opacity: 1;
+
+    transform:
+            scale(1);
+}
+
+.customization-option__content {
+    padding: 18px;
+}
+
+.customization-option__content > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+            space-between;
+
+    gap: 10px;
+}
+
+.customization-option__content strong {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.customization-option__content span {
+    color:
+            var(--customization-muted);
+
+    font-size: 11px;
+}
+
+.customization-option__content p {
+    margin:
+            9px
+            0
+            0;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.ring-size-panel,
+.engraving-panel {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    background:
+            var(--customization-background);
+}
+
+.ring-size-panel__visual,
+.engraving-panel__preview {
+    position: relative;
+
+    min-height: 330px;
+
+    overflow: hidden;
+}
+
+.ring-size-panel img,
+.engraving-panel img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.ring-size-panel__form,
+.engraving-panel__form {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 42px;
+}
+
+.ring-size-panel label,
+.engraving-panel label {
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.ring-size-panel select,
+.engraving-panel input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 15px;
+
+    color: inherit;
+
+    font: inherit;
+
+    background: #fff;
+
+    border:
+            1px solid
+            var(--customization-line);
+
+    border-radius: 0;
+}
+
+.ring-size-panel__form button {
+    align-self: flex-start;
+
+    padding:
+            0
+            0
+            3px;
+
+    margin-top: 20px;
+
+    color: inherit;
+
+    font-size: 12px;
+
+    background: none;
+
+    border: 0;
+
+    border-bottom:
+            1px solid
+            currentColor;
+
+    cursor: pointer;
+}
+
+.ring-size-panel__form p {
+    margin:
+            18px
+            0
+            0;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.engraving-panel__preview p {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+
+    margin: 0;
+
+    padding: 12px;
+
+    overflow: hidden;
+
+    color: #fff;
+
+    font-family:
+            Georgia,
+            serif;
+
+    font-size: 18px;
+
+    text-align: center;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    background:
+            rgb(0 0 0 / 28%);
+
+    backdrop-filter:
+            blur(5px);
+}
+
+.engraving-panel__form > div {
+    display: flex;
+
+    justify-content:
+            space-between;
+
+    gap: 20px;
+
+    margin-top: 10px;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 10px;
+}
+
+.customization-summary {
+    position: static;
+
+    width: 100%;
+
+    padding:
+            20px
+            28px
+            22px;
+
+    background:
+            var(--customization-background);
+
+    border:
+            1px solid
+            var(--customization-line);
+
+    border-top: 0;
+}
+
+.customization-summary__progress {
+    margin-bottom: 16px;
+}
+
+.customization-summary__progress
+> div:first-child {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+            space-between;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+}
+
+.customization-summary__progress-track {
+    height: 1px;
+
+    margin-top: 10px;
+
+    overflow: hidden;
+
+    background: #d8d2cb;
+}
+
+.customization-summary__progress-track span {
+    display: block;
+
+    height: 100%;
+
+    background:
+            var(--customization-ink);
+
+    transition:
+            width 250ms ease;
+}
+
+.customization-summary h2 {
+    margin:
+            0
+            0
+            16px;
+
+    font-family:
+            Georgia,
+            serif;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.customization-summary dl {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    margin: 0;
+
+    border-top:
+            1px solid
+            var(--customization-line);
+
+    border-left:
+            1px solid
+            var(--customization-line);
+}
+
+.customization-summary dl > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+            space-between;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding:
+            9px
+            12px;
+
+    border-right:
+            1px solid
+            var(--customization-line);
+
+    border-bottom:
+            1px solid
+            var(--customization-line);
+}
+
+.customization-summary dt {
+    flex-shrink: 0;
+
+    color:
+            var(--customization-muted);
+
+    font-size: 10px;
+}
+
+.customization-summary dd {
+    min-width: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.customization-summary__price {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+            space-between;
+
+    gap: 20px;
+
+    padding:
+            16px
+            0
+            12px;
+}
+
+.customization-summary__price > span {
+    color:
+            var(--customization-muted);
+
+    font-size: 10px;
+}
+
+.customization-summary__price strong {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.customization-summary__price p {
+    display: none;
+}
+
+.customization-summary > button {
+    width: 100%;
+    height: 42px;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    background:
+            var(--customization-ink);
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+.customization-summary > button:disabled {
+    color: #88827b;
+
+    background: #ddd8d2;
+
+    cursor: not-allowed;
+}
+
+.customization-summary__consultation {
+    display: none;
+}
+
+.customization-page__3d-loading {
+    display: grid;
+
+    min-height: 390px;
+
+    padding: 30px;
+
+    color: #77716b;
+
+    font-size: 12px;
+
+    background: #ebe7e1;
+
+    place-items: center;
+}
+
+@media (max-width: 1100px) {
+    .customization-page__layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 40px;
+    }
+
+    .customization-option-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customization-summary {
+        padding:
+                18px
+                20px
+                20px;
+    }
+
+    .customization-summary dl {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .customization-page {
+        padding-top: 76px;
+    }
+
+    .customization-page__hero {
+        padding:
+                65px
+                20px
+                70px;
+    }
+
+    .customization-page__layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding:
+                50px
+                20px
+                100px;
+    }
+
+    .ring-preview-sticky {
+        position: static;
+    }
+
+    .customization-option-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .ring-size-panel,
+    .engraving-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .ring-size-panel__form,
+    .engraving-panel__form {
+        padding:
+                28px
+                20px;
+    }
+
+    .customization-summary dl {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+@media (max-width: 520px) {
+    .customization-option-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customization-section {
+        padding-bottom: 60px;
+
+        margin-bottom: 60px;
+    }
+
+    .customization-summary {
+        padding:
+                18px
+                16px;
+    }
+
+    .customization-summary dl {
+        grid-template-columns: 1fr;
+    }
+
+    .customization-summary__price {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+}

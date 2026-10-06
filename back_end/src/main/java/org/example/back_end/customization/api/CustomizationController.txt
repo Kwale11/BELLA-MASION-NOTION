@@ -1,0 +1,31 @@
+@RestController: HTTP 요청을 처리하며, 반환 객체는 일반적인 설정에서 JSON으로 응답
+
+@RequestMapping("/api") : 이 클래스에 모든 API 경로 앞에 /api가 붙음
+
+아래 코드로 Spring이 CustomizationService 객체를 넣어주는데
+이를 생성자 주입이라고함
+이렇게 서비스 객체를 주입해서 서비스 처리를 해줌.
+생성자가 하나라면 @Autowired 생략 가능
+private final CustomizationService service;
+
+CustomizationController(CustomizationService service) {
+    this.service = service;
+}
+
+
+클라이언트가 /api/customization/options 주소로 옵션 목록을
+요청하면 service.options() 메서드의 결과를 반환함
+
+@GetMapping("/customization/options")
+RingOptions options() {
+    return service.options();
+}
+
+@RequestBody는 요청의 본문(body,json)를 자바 객체로 변환함
+@Valid 어노테이션이 해당 객체에 정의된 검증 조건을 확인함
+request.toSelections()은 요청 객체를 서비스에서 사용할 선택 정보로 변환함
+
+@PostMapping("/customization/quote")
+Quote quote(@Valid @RequestBody CustomizationRequest request) {
+    return service.quote(request.toSelections());
+}

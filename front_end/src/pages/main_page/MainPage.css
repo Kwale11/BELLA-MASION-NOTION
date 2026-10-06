@@ -1,0 +1,16 @@
+.main-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: visible;
+}
+
+.main-page__foreground {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    background-color: #faf9f6;
+}

@@ -1,0 +1,184 @@
+.reservation-hero {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: clamp(520px, 72vh, 760px);
+    overflow: hidden;
+
+    color: #f8f5ee;
+    background-color: #746e67;
+}
+
+.reservation-hero__image {
+    position: absolute;
+    z-index: -3;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*.reservation-hero__overlay {*/
+/*    position: absolute;*/
+/*    z-index: -2;*/
+/*    inset: 0;*/
+
+/*    background:*/
+/*            linear-gradient(*/
+/*                    180deg,*/
+/*                    rgb(18 15 12 / 42%) 0%,*/
+/*                    rgb(18 15 12 / 7%) 36%,*/
+/*                    rgb(18 15 12 / 50%) 100%*/
+/*            ),*/
+/*            linear-gradient(*/
+/*                    90deg,*/
+/*                    rgb(18 15 12 / 20%),*/
+/*                    transparent 55%*/
+/*            );*/
+/*}*/
+.reservation-hero__overlay {
+    display: none;
+}
+
+.reservation-hero__home {
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: inherit;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.reservation-hero__home svg {
+    transition: transform 180ms ease;
+}
+
+.reservation-hero__home:hover svg {
+    transform: translateX(-4px);
+}
+
+.reservation-hero__logo {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    z-index: 2;
+
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    transform: translateX(-50%);
+}
+
+.reservation-hero__logo strong {
+    display: block;
+    padding-left: 0.25em;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.25em;
+    white-space: nowrap;
+}
+
+.reservation-hero__logo span {
+    display: block;
+    margin-top: 7px;
+    padding-left: 0.38em;
+
+    font-size: 8px;
+    letter-spacing: 0.38em;
+}
+
+.reservation-hero__content {
+    position: absolute;
+    right: 32px;
+    bottom: 54px;
+    left: 32px;
+
+    text-align: center;
+}
+
+.reservation-hero__eyebrow {
+    margin: 0 0 16px;
+
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.reservation-hero h1 {
+    margin: 0 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(64px, 10vw, 116px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+}
+
+.reservation-hero__description {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+}
+
+.reservation-hero__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 22px;
+
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+    .reservation-hero {
+        min-height: 620px;
+    }
+
+
+
+    .reservation-hero__home span {
+        display: none;
+    }
+
+
+    .reservation-hero__logo strong {
+        font-size: 20px;
+        letter-spacing: 0.18em;
+    }
+
+    .reservation-hero__logo span {
+        display: none;
+    }
+
+    .reservation-hero__content {
+        right: 22px;
+        bottom: 42px;
+        left: 22px;
+    }
+
+    .reservation-hero h1 {
+        font-size: clamp(58px, 20vw, 78px);
+    }
+
+    .reservation-hero__description {
+        font-size: 12px;
+    }
+}

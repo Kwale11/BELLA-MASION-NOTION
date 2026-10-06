@@ -1,0 +1,60 @@
+.product-zoom-preview {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-55px);
+
+
+    width: 135%;
+    aspect-ratio: 1 / 1;
+
+    background-color: #f2f0ec;
+    background-repeat: no-repeat;
+    background-size: 240%;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+            opacity 120ms ease,
+            visibility 120ms ease;
+
+    box-shadow:
+            0 12px 30px rgb(0 0 0 / 10%),
+            0 2px 8px rgb(0 0 0 / 6%);
+}
+
+.product-zoom-preview--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-zoom-preview > span {
+    position: absolute;
+    right: 17px;
+    bottom: 15px;
+
+    padding: 6px 8px;
+
+    color: #302c27;
+    background-color: rgb(255 255 255 / 75%);
+
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .product-zoom-preview {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-zoom-preview {
+        transition: none;
+    }
+}
